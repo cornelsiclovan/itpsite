@@ -6,11 +6,11 @@ import './NavLinks.css';
 const NavLinks = props => {
     return (
         <ul className="nav-links">
+            {/* <li>
+                <NavLink to ='/' exact>ACASA</NavLink>
+            </li> */}
             <li>
-                <NavLink to ='/'>ACASA</NavLink>
-            </li>
-            <li>
-                <NavLink to ='/price'>PRETURI</NavLink>
+                <NavLink to ='/preturi'>PRETURI</NavLink>
             </li>
             <li>
                 <NavLink to ='/contact'>CONTACT</NavLink>

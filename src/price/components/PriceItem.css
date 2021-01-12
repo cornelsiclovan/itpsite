@@ -1,0 +1,50 @@
+.price-item {
+  margin: 1rem;
+  width: calc(50% - 2rem);
+  min-width: 20rem;
+  height: 10 rem;
+}
+
+.price-item a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  padding: 1rem;
+  color: white;
+  background: #292929;
+}
+
+.price-item a:hover,
+.price-item a:active {
+  background: #ffd900;
+}
+
+.price-item__content {
+  padding: 0;
+}
+
+.price-item__image {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+}
+
+.price-item__info h2 {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: normal;
+  color: #ffd900;
+}
+
+.price-item:hover h2,
+.price-item:active h2,
+.price-item:hover h3,
+.price-item:active h3 {
+  color: #292929;
+}
+
+.price-item__info h3 {
+  margin: 0;
+}
