@@ -4,6 +4,8 @@ import MainNavigation from './shared/components/navigation/MainNavigation';
 import Home from './home/pages/Home';
 import Prices from './price/pages/Prices';
 import Contact from './contact/pages/Contact';
+import Footer from './shared/components/navigation/Footer';
+import Telephone from './shared/components/navigation/Telephone';
 
 let routes;
 
@@ -28,6 +30,8 @@ const App = () => {
             <main>
                 {routes}
             </main>
+            <Footer />
+            <Telephone />
         </Router>
     )
 };

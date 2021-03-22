@@ -7,7 +7,8 @@ import "./PriceList.css";
 
 
 const PriceList = props => {
-    
+    console.log(props.items);
+
     if(props.items.length === 0) {
         return (
             <div className="center">
@@ -28,7 +29,6 @@ const PriceList = props => {
                     image={service.image}
                     price={service.price}
                     currency={service.currency}
-                    revenire={service.revenire}
                 />)
             }
         </ul>
