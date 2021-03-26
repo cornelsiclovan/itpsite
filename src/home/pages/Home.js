@@ -1,10 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Card from '../../shared/components/UIElements/Card';
+import React, {useEffect, useState} from 'react';
+import {useHttpClient} from '../../hooks/http-hook';
+import HomeList from '../components/HomeList';
 
 import './Home.css';
 
 const Home = () => {
+    const {isLoading, error, sendRequest, clearError} = useHttpClient();
+    const [loadedItems, setLoadedItems] = useState();
+
+    useEffect(() => {
+        const fetchItems = async () => {
+            try {
+                const responseData = await sendRequest('http://localhost:5000/api/items')
+               
+                setLoadedItems(responseData.items);               
+                console.log(loadedItems)
+            } catch(err){}
+        };
+        fetchItems();
+    }, [sendRequest]);
+
 
     return <React.Fragment>
          <div className="center">
@@ -14,36 +29,13 @@ const Home = () => {
                       &nbsp; &nbsp; Executam servicii de inspectii tehnice periodice
                         (ITP) in Timisoara si imprejurimi, la urmatoarele categorii
                         de autovehicule:
-                        <ul>
-                            <li>
-                                ITP autoturisme
-                            </li>
-                            <li>
-                                ITP autoutilitare {"<"} 3,5 T
-                            </li>
-                            <li>
-                                ITP auto 4 X 4
-                            </li>
-                            <li>
-                                ITP auto GNC/GPL
-                            </li>
-                            <li>
-                                ITP auto hibrid
-                            </li>
-                            <li>
-                                ITP auto electric
-                            </li>
-                            <li>
-                                ITP Taxi
-                            </li>
-                            <li>
-                                ITP Transport alternativ
-                            </li>
-                            <li>
-                                ITP auto fara servofrana
-                            </li>
+                    </p>
+                    <div className="center-text">
+                        <ul className="content_text">
+
+                            {!isLoading && loadedItems && <HomeList items={loadedItems}/>}
                         </ul>
-                  </p>
+                    </div>
                 </div>
         </div>
     </React.Fragment>

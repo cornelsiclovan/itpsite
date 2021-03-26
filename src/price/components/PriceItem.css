@@ -1,5 +1,5 @@
 .price-item {
-  margin: 1rem;
+  margin: 10px;
   width: calc(60% - 2rem);
   min-width: 20rem;
   height: 10 rem;
@@ -47,4 +47,34 @@
 
 .price-item__info h3 {
   margin: 0;
+}
+
+@media (max-height: 600px) {
+  .price-item {
+    margin: 10px;
+    width: calc(60% - 2rem);
+    min-width: 15rem;
+    height: 6 rem;
+  }
+  
+  .price-item a {
+    display: flex;
+    font-size: 10px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    padding: 0.2rem;
+    color: white;
+    background: #292929;
+  }
+
+  
+.price-item__image {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+}
+
+  
 }

@@ -1,11 +1,27 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {useHttpClient} from '../../../hooks/http-hook';
 import Avatar from '../UIElements/Avatar';
 
 
 import './Telephone.css'
 
 const Telephone = (params) => {
+    const {isLoading, error, sendRequest, clearError} = useHttpClient();
+    const [loadedContacts, setLoadedContacts] = useState();
 
+    useEffect(() => {
+        const fetchContacts = async () => {
+            try {
+                const responseData = await sendRequest('http://localhost:5000/api/contacts')
+                setLoadedContacts(responseData.contacts[0]);               
+                console.log("loadedContacts:", responseData.contacts[0])
+            } catch(err){}
+        };
+        fetchContacts();
+    }, [sendRequest]);
+
+
+    
     return (
         <React.Fragment>
             <div className="center">
@@ -13,7 +29,7 @@ const Telephone = (params) => {
                     <a className="phone" href="tel:+40766992525">
                         <img width="15"  src="/images/phone.png" alt="contact"/>
                         
-                        &nbsp;<b>0766992525</b>
+                        &nbsp;<b>{!isLoading && loadedContacts && loadedContacts.telefon}</b>
                     </a>
                 </div>
             </div>

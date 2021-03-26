@@ -28,8 +28,12 @@ const Contact = () => {
     }
 
     return <React.Fragment>
-        <div className="map-container">
-            <Map center={coordinates} zoom={16}/>
+        <div className="contact-container">
+            <div className="middle-container">
+            <div className="map-container">
+                <Map center={coordinates} zoom={16}/>
+            </div>
+            </div>
             {
                 !isLoading && loadedSchedule &&
                 <ul className="contact-list">
@@ -41,10 +45,10 @@ const Contact = () => {
                             </div>
                             <div className="price-item__info">
                                 <center>
-                                <h2><b>PROGRAM</b></h2></center>
-                                <h5> {loadedSchedule[0].tip_program} : {loadedSchedule[0].deschidere} - {loadedSchedule[0].inchidere}</h5>
-                                <h5> {loadedSchedule[1].tip_program} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {loadedSchedule[1].deschidere} - {loadedSchedule[1].inchidere}</h5>      
-                                
+                                <h2><b>PROGRAM</b></h2>
+                                <h5> {loadedSchedule[0].tip_program} :<br/> {loadedSchedule[0].deschidere} - {loadedSchedule[0].inchidere}</h5>
+                                <h5> {loadedSchedule[1].tip_program} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :<br/> {loadedSchedule[1].deschidere} - {loadedSchedule[1].inchidere}</h5>      
+                                </center>
                             </div>  
                         </Link>
                     </Card>

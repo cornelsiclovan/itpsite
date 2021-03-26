@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useHttpClient} from '../../../hooks/http-hook';
 
 import './Footer.css';
+import Telephone from './Telephone';
 
 const Footer = (props) => {
     const {isLoading, error, sendRequest, clearError} = useHttpClient();
@@ -20,6 +21,7 @@ const Footer = (props) => {
 
     return (
         <React.Fragment>
+            
             {!isLoading && loadedContacts && <div className='footer'>
                <div className='descriere'><b>ITP TIMISOARA &nbsp; - &nbsp; ITP SAG</b></div>
             </div>}
