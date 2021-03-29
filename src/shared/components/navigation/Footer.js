@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useHttpClient} from '../../../hooks/http-hook';
-
+const BASE_URL=process.env.REACT_APP_BASE_URL;
 import './Footer.css';
 import Telephone from './Telephone';
 
@@ -11,7 +11,7 @@ const Footer = (props) => {
     useEffect(() => {
         const fetchContacts = async () => {
             try {
-                const responseData = await sendRequest('http://localhost:5000/api/contacts')
+                const responseData = await sendRequest(`${BASE_URL}/api/contacts`)
                 setLoadedContacts(responseData.contacts[0]);               
                 console.log(loadedServices)
             } catch(err){}

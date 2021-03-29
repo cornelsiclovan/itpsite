@@ -17,6 +17,8 @@ import LoadingSpinner from '../../src/UIElements/LoadingSpinner';
 
 import './Auth.css';
 
+const BASE_URL=process.env.REACT_APP_BASE_URL;
+
 const Auth = () => {
     const auth = useContext(AuthContext);
     const [isLoadingMode, setIsLoadingMode] = useState(true);
@@ -42,7 +44,7 @@ const Auth = () => {
 
         try {
             const responseData = await sendRequest(
-                'http://localhost:5000/api/users/login',
+                `${BASE_URL}/api/users/login`,
                 'POST',
                 JSON.stringify({
                     username: formState.inputs.username.value,

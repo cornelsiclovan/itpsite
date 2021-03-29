@@ -9,6 +9,7 @@ import ErrorModal from '../../UIElements/ErrorModal';
 import LoadingSpinner from '../../UIElements/LoadingSpinner';
 import { VALIDATOR_REQUIRE } from '../../util/validators';
 
+const BASE_URL=process.env.REACT_APP_BASE_URL;
 
 const UpdateTelephone = () => {
     const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -28,7 +29,7 @@ const UpdateTelephone = () => {
     useEffect(() => {
         const fetchTelephone = async () => {
             try {
-                const responseData = await sendRequest(`http://localhost:5000/api/contacts/${telephoneId}`)
+                const responseData = await sendRequest(`${BASE_URL}/api/contacts/${telephoneId}`)
                 setLoadedTelephone(responseData.contact);
 
                 setFormData(
@@ -52,7 +53,7 @@ const UpdateTelephone = () => {
         console.log(formState.inputs.telefon.value);
 
         try{
-            await sendRequest(`http://localhost:5000/api/contacts/${telephoneId}`,
+            await sendRequest(`${BASE_URL}/api/contacts/${telephoneId}`,
                               'PATCH',
                               JSON.stringify({
                                   "telefon": formState.inputs.telefon.value

@@ -9,6 +9,7 @@ import ErrorModal from '../../UIElements/ErrorModal';
 import LoadingSpinner from '../../UIElements/LoadingSpinner';
 import { VALIDATOR_REQUIRE } from '../../util/validators';
 
+const BASE_URL=process.env.REACT_APP_BASE_URL;
 
 const UpdatePrice = () => {
     const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -41,7 +42,7 @@ const UpdatePrice = () => {
     useEffect(() => {
         const fetchPrice = async () => {
             try {
-                const responseData = await sendRequest(`http://localhost:5000/api/services/${priceId}`)
+                const responseData = await sendRequest(`${BASE_URL}/api/services/${priceId}`)
                 setLoadedPrice(responseData.service);
 
                 setFormData(
@@ -76,7 +77,7 @@ const UpdatePrice = () => {
         event.preventDefault();
 
         try{
-            await sendRequest(`http://localhost:5000/api/services/${priceId}`,
+            await sendRequest(`${BASE_URL}/api/services/${priceId}`,
                               'PATCH',
                               JSON.stringify({
                                   "name": formState.inputs.name.value,

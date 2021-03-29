@@ -6,6 +6,8 @@ import Card from '../../shared/components/UIElements/Card';
 import Map from '../../shared/components/UIElements/Map'
 import ContactList from '../components/ContactList';
 
+const BASE_URL=process.env.REACT_APP_BASE_URL;
+
 const ContactEdit = () => {
     const {isLoading, error, sendRequest, clearError} = useHttpClient();
     const [loadedSchedule, setLoadedSchedule] = useState();
@@ -15,14 +17,14 @@ const ContactEdit = () => {
     useEffect(() => {
         const fetchSchedule = async () => {
             try {
-                const responseData = await sendRequest('http://localhost:5000/api/programs')
+                const responseData = await sendRequest(`${BASE_URL}/api/programs`)
                 setLoadedSchedule(responseData.programs);               
             } catch(err){}
         };
 
         const fetchContacts = async () => {
             try {
-                const responseData = await sendRequest('http://localhost:5000/api/contacts')
+                const responseData = await sendRequest(`${BASE_URL}/api/contacts`)
                 setLoadedContacts(responseData.contacts);               
             } catch(err){}
         };

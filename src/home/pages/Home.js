@@ -3,6 +3,7 @@ import {useHttpClient} from '../../hooks/http-hook';
 import HomeList from '../components/HomeList';
 
 import './Home.css';
+const BASE_URL=process.env.REACT_APP_BASE_URL;
 
 const Home = () => {
     const {isLoading, error, sendRequest, clearError} = useHttpClient();
@@ -11,7 +12,7 @@ const Home = () => {
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const responseData = await sendRequest('http://localhost:5000/api/items')
+                const responseData = await sendRequest(`${BASE_URL}/api/items`)
                
                 setLoadedItems(responseData.items);               
                 console.log(loadedItems)

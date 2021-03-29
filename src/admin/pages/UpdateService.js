@@ -9,6 +9,7 @@ import ErrorModal from '../../UIElements/ErrorModal';
 import LoadingSpinner from '../../UIElements/LoadingSpinner';
 import { VALIDATOR_REQUIRE } from '../../util/validators';
 
+const BASE_URL=process.env.REACT_APP_BASE_URL;
 
 const UpdateService = () => {
     const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -28,7 +29,7 @@ const UpdateService = () => {
     useEffect(() => {
         const fetchService = async () => {
             try {
-                const responseData = await sendRequest(`http://localhost:5000/api/items/${serviceId}`)
+                const responseData = await sendRequest(`${BASE_URL}/api/items/${serviceId}`)
                 setLoadedService(responseData.item);
 
                 setFormData(
@@ -51,7 +52,7 @@ const UpdateService = () => {
         event.preventDefault();
 
         try{
-            await sendRequest(`http://localhost:5000/api/items/${serviceId}`,
+            await sendRequest(`${BASE_URL}/api/items/${serviceId}`,
                               'PATCH',
                               JSON.stringify({
                                   "service_name": formState.inputs.service_name.value

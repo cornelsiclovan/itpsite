@@ -9,6 +9,7 @@ import ErrorModal from '../../UIElements/ErrorModal';
 import LoadingSpinner from '../../UIElements/LoadingSpinner';
 import { VALIDATOR_REQUIRE } from '../../util/validators';
 
+const BASE_URL=process.env.REACT_APP_BASE_URL;
 
 const UpdateContact = () => {
     const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -37,7 +38,7 @@ const UpdateContact = () => {
     useEffect(() => {
         const fetchContact = async () => {
             try {
-                const responseData = await sendRequest(`http://localhost:5000/api/programs/${programId}`)
+                const responseData = await sendRequest(`${BASE_URL}/api/programs/${programId}`)
                 setLoadedProgram(responseData.program);
 
                 setFormData(
@@ -68,7 +69,7 @@ const UpdateContact = () => {
         event.preventDefault();
 
         try{
-            await sendRequest(`http://localhost:5000/api/programs/${programId}`,
+            await sendRequest(`${BASE_URL}/api/programs/${programId}`,
                               'PATCH',
                               JSON.stringify({
                                   "tip_program": formState.inputs.tip_program.value,

@@ -6,6 +6,8 @@ import Card from '../../shared/components/UIElements/Card';
 import Map from '../../shared/components/UIElements/Map'
 import PriceList from '../components/PriceList';
 
+const BASE_URL=process.env.REACT_APP_BASE_URL;
+
 const PriceEdit = () => {
     const {isLoading, error, sendRequest, clearError} = useHttpClient();
     const [loadedServices, setLoadedServices] = useState();
@@ -13,7 +15,7 @@ const PriceEdit = () => {
     useEffect(() => {
         const fetchServices = async () => {
             try {
-                const responseData = await sendRequest('http://localhost:5000/api/services')
+                const responseData = await sendRequest(`${BASE_URL}/api/services`)
                 setLoadedServices(responseData.services);               
             } catch(err){}
         };

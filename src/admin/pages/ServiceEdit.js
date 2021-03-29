@@ -6,6 +6,8 @@ import Card from '../../shared/components/UIElements/Card';
 import Map from '../../shared/components/UIElements/Map'
 import ServiceList from '../components/ServiceList';
 
+const BASE_URL=process.env.REACT_APP_BASE_URL;
+
 const ServiceEdit = () => {
 
     const {isLoading, error, sendRequest, clearError} = useHttpClient();
@@ -14,7 +16,7 @@ const ServiceEdit = () => {
     useEffect(() => {
         const fetchServices = async () => {
             try {
-                const responseData = await sendRequest('http://localhost:5000/api/items')
+                const responseData = await sendRequest(`${BASE_URL}/api/items`)
                 setLoadedServices(responseData.items);               
             } catch(err){}
         };

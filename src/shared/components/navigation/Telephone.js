@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {useHttpClient} from '../../../hooks/http-hook';
 import Avatar from '../UIElements/Avatar';
-
+const BASE_URL=process.env.REACT_APP_BASE_URL;
 
 import './Telephone.css'
+
 
 const Telephone = (params) => {
     const {isLoading, error, sendRequest, clearError} = useHttpClient();
@@ -12,7 +13,7 @@ const Telephone = (params) => {
     useEffect(() => {
         const fetchContacts = async () => {
             try {
-                const responseData = await sendRequest('http://localhost:5000/api/contacts')
+                const responseData = await sendRequest(`${BASE_URL}/api/contacts`)
                 setLoadedContacts(responseData.contacts[0]);               
                 console.log("loadedContacts:", responseData.contacts[0])
             } catch(err){}
