@@ -29,7 +29,7 @@ const Contact = () => {
     }
 
     return <React.Fragment>
-        <div className="contact-container">
+        {/* <div className="contact-container">
             <div className="middle-container">
             <div className="map-container">
                 <Map center={coordinates} zoom={16}/>
@@ -56,7 +56,38 @@ const Contact = () => {
                     </li>
                 </ul>
             }
-        </div>
+        </div> */}
+
+            <div class="card mb-5 mt-5 ml-5 mr-5">
+                <div className="map-container">
+                    <Map center={coordinates} zoom={16}/>
+                </div>
+            </div>
+
+            {
+                
+                !isLoading && loadedSchedule &&
+                <ul className="contact-list"> 
+                <div className="card mb-5 mt-5 shadow-sm contact-item">
+                    <div className="card-body contact-item__content">
+                            <Link to="/contact" >
+                                <div className="contact-item__image">
+                                    <Avatar image="/images/calendar.jpg" alt="contact"/>
+                                </div>
+                                <div className="contact-item__info">
+                                    <center>
+                                    <h2><b>PROGRAM</b></h2>
+                                    <h5> {loadedSchedule[0].tip_program} :<br/> {loadedSchedule[0].deschidere} - {loadedSchedule[0].inchidere}</h5>
+                                    <h5> {loadedSchedule[1].tip_program} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :<br/> {loadedSchedule[1].deschidere} - {loadedSchedule[1].inchidere}</h5>      
+                                    </center>
+                                </div>  
+                            </Link>
+                        
+                    </div>
+                </div>
+                </ul>
+            }
+      
     </React.Fragment>
 };
 

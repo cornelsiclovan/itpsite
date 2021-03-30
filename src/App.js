@@ -98,9 +98,9 @@ const App = () => {
             >
             <Router>
                 <MainNavigation />
-                <main>
+           
                     {routes}
-                </main>
+           
                 <Footer />
                 <Telephone />
             </Router>

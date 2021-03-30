@@ -13,15 +13,23 @@
     height: 15rem;
     width: 90%;
 }
-
+/* 
 .contact-item {
     min-height: 19rem;
     margin: 1rem;
     width: 90%;
     height: 10 rem;
   }
-  
-.contact-list {
+   */
+
+   .contact-item {
+    margin: 10px;
+    width: calc(60% - 2rem);
+    min-width: 20rem;
+    height: 10 rem;
+  }
+
+/* .contact-list {
     list-style: none;
     margin: 0 auto;
     padding: 0;
@@ -30,6 +38,19 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+  } */
+
+  .contact-list {
+    list-style: none;
+    margin: 0 auto;
+    height: 30rem;
+    padding: 0;
+    width: 90%;
+    max-width: 50rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
   }
 
 .contact-item a {

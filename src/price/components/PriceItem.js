@@ -23,7 +23,7 @@ const PriceItem = props => {
         // </li>
         <div className="card mb-3 mt-3 shadow-sm price-item">
             <div className="card-body  price-item__content">
-                <Link to="/pretur">
+                <Link to="/preturi">
                         <div className="price-item__image">
                             <Avatar image={props.image} alt={props.name}/>
                         </div>
