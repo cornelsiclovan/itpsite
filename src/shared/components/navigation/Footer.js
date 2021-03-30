@@ -20,11 +20,25 @@ const Footer = (props) => {
     }, [sendRequest]);
 
     return (
-        <React.Fragment>
+        // <React.Fragment>
             
-            {!isLoading && loadedContacts && <div className='footer'>
-               <div className='descriere'><b>ITP TIMISOARA &nbsp; - &nbsp; ITP SAG</b></div>
-            </div>}
+        //     {!isLoading && loadedContacts && <div className='footer'>
+        //        <div className='descriere'><b>ITP TIMISOARA &nbsp; - &nbsp; ITP SAG</b></div>
+        //     </div>}
+
+        // </React.Fragment>
+
+        <React.Fragment>
+                    
+        {!isLoading && loadedContacts && 
+            <div className='footer'>
+            
+                <div className='descriere'>
+                    <b>ITP TIMISOARA &nbsp; - &nbsp; ITP SAG</b>
+                
+                </div>
+            </div>
+        }
 
         </React.Fragment>
     );

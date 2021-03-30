@@ -21,3 +21,7 @@ main {
     justify-content: space-between;
   }
 }
+
+.header-color {
+  background: #6495ed;
+}
