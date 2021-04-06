@@ -34,11 +34,7 @@
   height: 100%;
 }
 
-@media (min-width: 300px) {
-  .main-navigation__menu-btn {
-    display: none;
-  }
-
+@media (min-width: 200px) {
   .main-navigation__header-nav {
     display: block;
   }

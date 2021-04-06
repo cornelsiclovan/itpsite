@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import TelephoneItem from '../../../admin/components/TelephoneItem';
 import {useHttpClient} from '../../../hooks/http-hook';
 const BASE_URL=process.env.REACT_APP_BASE_URL;
 import './Footer.css';
@@ -32,11 +33,9 @@ const Footer = (props) => {
                     
         {!isLoading && loadedContacts && 
             <div className='footer'>
-            
                 <div className='descriere'>
                     <b>ITP TIMISOARA &nbsp; - &nbsp; ITP SAG</b>
-                
-                </div>
+                </div> 
             </div>
         }
 

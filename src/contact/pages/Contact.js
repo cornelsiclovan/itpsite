@@ -29,7 +29,7 @@ const Contact = () => {
     }
 
     return <React.Fragment>
-        {/* <div className="contact-container">
+        <div className="contact-container">
             <div className="middle-container">
             <div className="map-container">
                 <Map center={coordinates} zoom={16}/>
@@ -56,9 +56,9 @@ const Contact = () => {
                     </li>
                 </ul>
             }
-        </div> */}
+        </div>
 
-            <div class="card mb-5 mt-5 ml-5 mr-5">
+            {/* <div class="card mb-5 mt-5 ml-5 mr-5">
                 <div className="map-container">
                     <Map center={coordinates} zoom={16}/>
                 </div>
@@ -86,7 +86,7 @@ const Contact = () => {
                     </div>
                 </div>
                 </ul>
-            }
+            } */}
       
     </React.Fragment>
 };

@@ -1,7 +1,7 @@
 .price-list {
   list-style: none;
   margin: 0 auto;
-  height: 30rem;
+  /* height: 30rem; */
   padding: 0;
   width: 90%;
   max-width: 50rem;
@@ -11,8 +11,8 @@
   align-content: flex-start;
 }
 
-@media (max-height: 600px) {
+/* @media (max-height: 600px) {
   .price-list{
     height: 20rem;
   }
-}
+} */
