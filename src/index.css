@@ -11,6 +11,11 @@ html {
 body {
   margin: 0;
   background: #4d4d4d;
+  background-image: url(img/mechanic-car-fix-repair-001-512.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.9;
+  background-attachment: fixed;
 }
 
 .slide-in-left-enter {
