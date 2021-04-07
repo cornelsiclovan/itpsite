@@ -26,12 +26,14 @@ const Telephone = (params) => {
     return (
         <React.Fragment>
             <div className="center">
-                <div className="telephone">   
-                    <a className="phone" href="tel:+40766992525">
+                <div className="telephone"> 
+                    {!isLoading && loadedContacts &&
+                    <a className="phone" href={`tel: ${loadedContacts.telefon}`}>
                         <img width="15"  src="/images/phone.png" alt="contact"/>
                         
-                        &nbsp;<b>{!isLoading && loadedContacts && loadedContacts.telefon}</b>
+                        &nbsp;<b>{loadedContacts.telefon}</b>
                     </a>
+                    } 
                 </div>
             </div>
         </React.Fragment>
