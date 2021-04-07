@@ -1,6 +1,6 @@
 .price-item {
   margin: 10px;
-  width: calc(60% - 2rem);
+  width: 80%;
   min-width: 15rem;
   height: 10 rem;
 }
