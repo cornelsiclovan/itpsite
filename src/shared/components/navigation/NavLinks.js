@@ -13,10 +13,10 @@ const NavLinks = props => {
                 <NavLink to ='/' exact>ACASA</NavLink>
             </li> */}
             <li>
-                <NavLink to ='/preturi'><img src=/images/price-tag-euro.png" style="width:20px;height:20px;">&nbsp;PRETURI</NavLink>
+                <NavLink to ='/preturi'>PRETURI</NavLink>
             </li>
             <li>
-                <NavLink to ='/contact'><img src=/images/location-512.png" style="width:20px;height:20px;">&nbsp;CONTACT</NavLink>
+                <NavLink to ='/contact'>CONTACT</NavLink>
             </li>
         </ul>
     )
