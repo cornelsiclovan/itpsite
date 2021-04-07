@@ -1,8 +1,7 @@
 
 .home {
-    min-height: 25rem;
+    min-height: 20rem;
     top: 200px;
-
     padding: 48px 12px 12px 12px ;
     width: 80%;
     background-color:  #292929;;
@@ -13,13 +12,32 @@
     font-size: 20px;
 }
 
+ul {
+    padding-inline-start: 20px;
+}
+
 .center-text {
-     width: 100%;
-  display: flex;
-  justify-content: center;
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
 }
 
 
+.content_text {
+    text-align: justify;
+    font-size: 15px;
+    color: white;
+}
+
+@media (max-width: 286px) {
+    .home {
+        font-size: 15px;
+    }
+    .content_text {
+  
+        font-size: 14px;
+    }
+}
 
 @media (min-height: 700px) {
     .home {
@@ -29,11 +47,6 @@
 }
 
 
-.content_text {
-    text-align: left;
-    font-size: 15px;
-    color: white;
-}
 
 
 @media (max-height: 600px) {
@@ -43,7 +56,7 @@
     }
 
     .content_text {
-        text-align: left;
+        text-align: justify;
         font-size: 12px;
         color: white;
     }

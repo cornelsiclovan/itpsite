@@ -1,6 +1,6 @@
 .telephone {
     position: fixed;
-    bottom: 60px;
+    bottom: 50px;
     padding: 12px;
     width: 80%;
     background-color: #830000;
@@ -12,10 +12,10 @@
     
 }
 
+
 a{
     text-decoration: none;
     color: white;
     /* font-size: 2em; */
 }
-
 
