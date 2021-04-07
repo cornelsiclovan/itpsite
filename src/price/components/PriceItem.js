@@ -9,7 +9,7 @@ const PriceItem = props => {
     return(
         <li className="price-item"> 
             <Card className="price-item__content">
-                <Link to={`/${props.id}/pret`}>
+                <Link to="#">
                     <div className="price-item__image">
                         <Avatar image={props.image} alt={props.name}/>
                     </div>

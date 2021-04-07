@@ -32,7 +32,9 @@ const Contact = () => {
         <div className="contact-container">
             <div className="middle-container">
             <div className="map-container">
-                <Map center={coordinates} zoom={16}/>
+                <a href='https://www.google.com/maps/place/Itp+Sag/@45.654214,21.172736,17z/data=!3m1!4b1!4m5!3m4!1s0x47455b7b33c11647:0x7a83ce2b1dca7415!8m2!3d45.654214!4d21.1749247'>
+                    <Map center={coordinates} zoom={16}/>
+                </a>
             </div>
             </div>
             {
@@ -40,15 +42,15 @@ const Contact = () => {
                 <ul className="contact-list">
                     <li className="contact-item"> 
                     <Card className="price-item__content">
-                        <Link to="">
+                        <Link to="#">
                             <div className="price-item__image">
                                 <Avatar image="/images/calendar.jpg" alt="contact"/>
                             </div>
                             <div className="price-item__info">
                                 <center>
                                 <h2><b>PROGRAM</b></h2>
-                                <h5> {loadedSchedule[0].tip_program} :<br/> {loadedSchedule[0].deschidere} - {loadedSchedule[0].inchidere}</h5>
-                                <h5> {loadedSchedule[1].tip_program} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :<br/> {loadedSchedule[1].deschidere} - {loadedSchedule[1].inchidere}</h5>      
+                                <h3> {loadedSchedule[0].tip_program} :<br/> {loadedSchedule[0].deschidere} - {loadedSchedule[0].inchidere}</h3>
+                                <h3> {loadedSchedule[1].tip_program} :<br/> {loadedSchedule[1].deschidere} - {loadedSchedule[1].inchidere}</h3>      
                                 </center>
                             </div>  
                         </Link>
