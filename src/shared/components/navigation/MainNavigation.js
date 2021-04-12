@@ -32,7 +32,7 @@ const MainNavigation = () => {
                     <span />
                 </button> */}
                 <h2 className="main-navigation__title">
-                    <img src="/images/checked-car.png" width="20" height="20"></img><Link to="/">&nbsp;ITP SAG</Link>
+                    <Link to="/">ITP SAG</Link>
                 </h2>
                 <nav className="main-navigation__header-nav">
                     <NavLinks />
