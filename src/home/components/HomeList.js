@@ -5,7 +5,7 @@ import HomeItem from './HomeItem';
 
 
 const HomeList = props => {
-    console.log(props.items);
+    //console.log(props.items);
 
     if(props.items.length === 0) {
         return (
