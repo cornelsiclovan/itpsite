@@ -18,9 +18,16 @@ import UpdatePrice from './admin/pages/UpdatePrice';
 import UpdateContact from './admin/pages/UpdateContact';
 import UpdateTelephone from './admin/pages/UpdateTelephone';
 import Meta from './home/components/Meta';
+import TagManager from 'react-gtm-module';
 
 const App = () => {
     const { token, login, logout, userId} = useAuth();
+
+    const tagManagerArgs = {
+        gtmId: 'GTM-56TJXVQ'
+    }
+
+    TagManager.initialize(tagManagerArgs);
 
     let routes;
    
