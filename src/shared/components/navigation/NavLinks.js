@@ -11,10 +11,10 @@ const NavLinks = props => {
         <ul className="nav-links">
             {/* <li>
                 <NavLink to ='/' exact>ACASA</NavLink>
-            </li> */}
+            </li> 
             <li>
                 <NavLink to ='/preturi'>PRETURI</NavLink>
-            </li>
+            </li>*/}
             <li>
                 <NavLink to ='/contact'>CONTACT</NavLink>
             </li>
