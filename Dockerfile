@@ -17,5 +17,7 @@ RUN apt update && apt -y upgrade && apt clean all
 # Bundle app source
 COPY . .
 
+RUN npm run build
+
 EXPOSE 3000
 CMD [ "serve", "-s", "build" ]
